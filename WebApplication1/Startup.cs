@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -39,8 +40,19 @@ namespace WebApplication1
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseHsts(); // added
+            }
 
             app.UseHttpsRedirection();
+            app.UseStaticFiles(); // added
+            app.UseCors("CorsPolicy"); // added
+            app.UseForwardedHeaders(new ForwardedHeadersOptions // added
+            {
+                ForwardedHeaders = ForwardedHeaders.All
+            });
+
 
             app.UseRouting();
 
