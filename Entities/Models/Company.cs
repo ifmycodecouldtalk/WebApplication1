@@ -21,5 +21,4 @@ namespace Entities.Models
         public string Country { get; set; }
         public ICollection<Employee> Employees { get; set; }
     }
-  
 }

@@ -13,7 +13,7 @@ namespace Entities
         public RepositoryContext(DbContextOptions options) : base(options)
         {
         }
-        public DbSet<CompanyEmployees> Companies { get; set; }
+        public DbSet<Company> Companies { get; set; }
         public DbSet<Employee> Employees { get; set; }
     }
 }

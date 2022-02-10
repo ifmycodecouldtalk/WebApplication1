@@ -29,7 +29,7 @@ namespace WebApplication1.Extensions
             IConfiguration configuration) =>
              services.AddDbContext<RepositoryContext>(opts =>
              opts.UseSqlServer(configuration.GetConnectionString("sqlConnection"), b => 
-                b.MigrationsAssembly("CompanyEmployees")));
+                b.MigrationsAssembly("WebApplication1")));
 
 
     }
